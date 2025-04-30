@@ -7,6 +7,12 @@ fi
 export GPODDER_HOME=$HOME/.local/share/gPodder
 export GPODDER_DOWNLOAD_DIR=$GPODDER_HOME/Downloads
 
+# Go
+[[ -d ~/.go/bin/ ]] && PATH=~/.go/bin:$PATH
+GOPATH=$HOME/.go
+export GOPATH
+
+
 [[ -d ~/.local/bin ]] && PATH=~/.local/bin:$PATH
 
 # Rustup
