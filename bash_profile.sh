@@ -1,6 +1,6 @@
 # Get the aliases and functions
 if [[ -f ~/.bashrc ]]; then
-    . ~/.bashrc
+  . ~/.bashrc
 fi
 
 # I don't like the default gPodder directory
@@ -12,15 +12,15 @@ export GPODDER_DOWNLOAD_DIR=$GPODDER_HOME/Downloads
 GOPATH=$HOME/.go
 export GOPATH
 
-
 [[ -d ~/.local/bin ]] && PATH=~/.local/bin:$PATH
 
 # Rustup
 if [[ -f $HOME/.cargo/env ]]; then
-    . $HOME/.cargo/env
+  . $HOME/.cargo/env
 fi
 
 # Odin
 [[ -d /opt/odin ]] && PATH=$PATH:/opt/odin
 
-
+# PHP
+[[ -d ~/.composer/vendor/bin ]] && PATH=$PATH:$HOME/.composer/vendor/bin
