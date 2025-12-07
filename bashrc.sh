@@ -7,4 +7,4 @@ fi
 alias pg='psql --user lorenzo --host localhost'
 
 # Set up asdf completions
-. <(asdf completions bash)
+. <(asdf completion bash)
