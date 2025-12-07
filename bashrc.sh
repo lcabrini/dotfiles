@@ -1,8 +1,10 @@
-
 [[ -z $PS1 ]] && return
 
 if [[ -f /etc/bashrc ]]; then
-    . /etc/bashrc
+  . /etc/bashrc
 fi
 
 alias pg='psql --user lorenzo --host localhost'
+
+# Set up asdf completions
+. <(asdf completions bash)

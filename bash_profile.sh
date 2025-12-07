@@ -24,3 +24,6 @@ fi
 
 # PHP
 [[ -d ~/.composer/vendor/bin ]] && PATH=$PATH:$HOME/.composer/vendor/bin
+
+# asdf
+[[ -d ~/.asdf ]] && PATH=$PATH:$HOME/.asdf/shims
