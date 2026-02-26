@@ -1,2 +1,73 @@
-# README
+#+TITLE: README
+#+AUTHOR: Lorenzo Cabrini
+#+AUTO_TANGLE: t
+#+OPTIONS: toc:3
+#+FILETAGS: :config:
 
+* Introduction
+This is a collection of configuration files that I use.
+* Shells
+** Bash
+I use [[https://www.gnu.org/software/bash/][Bash]] as my primary shell on Linux systems.
+
+*** Bash Profile
+The ~~/.bash_profile~ configuration file is sourced by login shells.
+
+#+begin_src bash :tangle "~/.bash_profile"
+  # Get the aliases and functions
+  if [[ -f ~/.bashrc ]]; then
+    . ~/.bashrc
+  fi
+
+  # I don't like the default gPodder directory
+  export GPODDER_HOME=$HOME/.local/share/gPodder
+  export GPODDER_DOWNLOAD_DIR=$GPODDER_HOME/Downloads
+
+  # Go
+  [[ -d ~/.go/bin/ ]] && PATH=~/.go/bin:$PATH
+  GOPATH=$HOME/.go
+  export GOPATH
+
+  [[ -d ~/.local/bin ]] && PATH=~/.local/bin:$PATH
+
+  # Rustup
+  if [[ -f $HOME/.cargo/env ]]; then
+    . $HOME/.cargo/env
+  fi
+
+  # Odin
+  [[ -d /opt/odin ]] && PATH=$PATH:/opt/odin
+
+  # PHP
+  [[ -d ~/.composer/vendor/bin ]] && PATH=$PATH:$HOME/.composer/vendor/bin
+
+  # asdf
+  [[ -d ~/.asdf/shims ]] && PATH=$PATH:$HOME/.asdf/shims
+
+#+end_src
+*** Bashrc
+The ~~/.bashrc~ configuration file is sourced by interactive shells.
+
+#+begin_src bash :tangle "~/.bashrc"
+  [[ -z $PS1 ]] && return
+
+  if [[ -f /etc/bashrc ]]; then
+    . /etc/bashrc
+  fi
+
+  alias pg='psql --user lorenzo --host localhost'
+
+  # Set up asdf completions
+  . <(asdf completion bash)
+#+end_src
+* Git
+** Configuration
+#+begin_src conf :tangle "~/.gitconfig"
+  [user]
+  	email = lorenzo.cabrini@gmail.com
+  	name = Lorenzo Cabrini
+  [pull]
+  	rebase = true
+  [init]
+  	defaultBranch = main
+#+end_src

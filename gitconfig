@@ -1,7 +1,0 @@
-[user]
-	email = lorenzo.cabrini@gmail.com
-	name = Lorenzo Cabrini
-[pull]
-	rebase = true
-[init]
-	defaultBranch = main
